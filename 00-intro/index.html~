@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>How To Teach Yourself To Code</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Joel Turnbull">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+				  <h1>How to Teach Yourself How To Code</h1>
+				  <img src="img/ga_logo.png" alt="" style="border:none;background:transparent;width:100px;float:left;">
+				</section>
+
+				<section>
+					<h1>Me</h1>
+					<ul>
+						<li>Joel Turnbull</li>
+						<li>certainthings @ gmail . com</li>
+						<li class="fragment">20+ years developing</li>
+						<li class="fragment">Web stuff since last century</li>
+						<li class="fragment">Sharing is caring</li>
+				</section>
+
+				<section>
+					<h1>Doing It Yourself Is The Path Of Least Resistance</h1>
+				</section>
+
+				<section>
+					<h1>You have a clever idea</h1>
+					<p class="fragment">To turn that into <strong>something</strong> you need to...</p>
+					<ul>
+						<li class="fragment">Find people to implement it for you</li>
+						<li class="fragment">Convey your idea to them</li>
+						<li class="fragment">Establish that it's actually technically possible</li>
+						<li class="fragment">Get it done</li>
+						<li class="fragment">Pay for all of this <span class="fragment">(somehow)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Obstacles</h1>
+					<ul>
+						<li class="fragment">Good developers already have jobs and queues of freelance and hobby projects</li>
+						<li class="fragment">Good developers are expensive</li>
+						<li class="fragment">Developers will need to understand your project to be interested in it</li>
+						<li class="fragment">You'll spend a lot of time and money on something that might not work</li>
+						<li class="fragment">You won't know what your developers are up to</li>
+				</section>
+
+				<section>
+					<h1>Alternatively</h1>
+					<h2>You can do it yourself</h2>
+					<ul>
+						<li class="fragment">Hardware is cheap (your laptop is a test server)</li>
+						<li class="fragment">Documentation and resources are abundant</li>
+						<li class="fragment">You know best what you're after</li>
+						<li class="fragment">You'll have fun</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>You Don't Have To Be A Genius</h1>
+					<ul>
+						<li class="fragment">It doesn't have to be perfect</li>
+						<li class="fragment">It can be slow</li>
+						<li class="fragment">It can be buggy</li>
+						<li class="fragment">It can be ugly</li>
+						<li class="fragment">All you need is a prototype</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Software Engineers Vs Hackers</h1>
+					<ul>
+						<li class="fragment">Software engineers practice computer science</li>
+						<li class="fragment">They can tell you the most efficient ways to sort a deck of playing cards</li>
+						<li class="fragment">Hackers make things, the science is less important</li>
+						<li class="fragment">Software engineers make things too</li>
+						<li class="fragment">Both perspectives are good</li>
+					</ul>
+					<small class="fragment">(Hacker originally meant <a href="http://catb.org/jargon/html/H/hacker.html" target="_blank">someone who makes furniture with an axe)</a></small>
+				</section>
+
+				<section>
+					<h1>The Minimum Viable Product</h1>
+					<ul>
+						<li>A proof of concept</li>
+						<li class="fragment">Something to show off to investors</li>
+						<li class="fragment">... and developers</li>
+						<li class="fragment">... and designers</li>
+						<li class="fragment">... and lawyers</li>
+						<li class="fragment">... and everyone else who'll help make it great</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Minimum Viable Product</h1>
+					<p>Building it yourself will give a <b>deep</b> understanding of your product.</p>
+					<p class="fragment">You'll be able to understand and manage what your developers are doing and why.</p>
+					<p class="fragment">And they (we) will love you for it.</p>
+				</section>
+
+				<section>
+					<h1>More Grandly</h1>
+					<p>Quite apart from your next project...</p>
+					<ul>
+						<li class="fragment">The rest of the world is increasingly going digital</li>
+						<li class="fragment">The real world is becoming more virtual</li>
+						<li class="fragment">The virtual world is becoming more real</li>
+						<li class="fragment">Banking, literature, maps, music, art, communication</li>
+						<li class="fragment">When you can code, you have more control over this virtual world</li>
+						<li class="fragment">Understanding what's possible will help you invent new things</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Software literacy is the new literacy</h1>
+				</section>
+
+				<section>
+					<h1>Code Year</h1>
+					<p>2012 was <a href="http://www.codeyear.com/" target="_blank">http://www.codeyear.com/</a></p>
+					<ul>
+						<li class="fragment">Free course in programming</li>
+						<li class="fragment">For non-programmers</li>
+						<li class="fragment">Resources au-go-go</li>
+						<li class="fragment"><a href="http://generalassemb.ly/locations/sydney" target="_blank">General Assembly</a> also offers short classes to help you level up in specific areas</li>
+						<li class="fragment">The <a href="http://programmingfun.eventbrite.com/#" target="_blank">Programming Fundamentals</a> course will help you get to grips with the practice of programming</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Big Picture</h1>
+					<h2>How the Web Works</h2>
+					<ul>
+						<li>The Web uses a <strong>client-server</strong> model</li>
+						<li class="fragment">What we see in the browser is the <strong>front-end</strong></li>
+						<li class="fragment">This is the stuff the browser understands</li>
+						<li class="fragment">HTML, CSS, Javascript</li>
+						<li class="fragment">The browser is <strong>the client</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Big Picture</h1>
+					<h2>How the Web Works</h2>
+					<ul>
+						<li class="fragment">What you don't see is the <strong>back-end</strong></li>
+						<li class="fragment">Processes and databases on computers far away</li>
+						<li class="fragment">This is the <strong>server</strong></li>
+						<li class="fragment">The "Internet" doesn't do much &mdash; it just passes data from the server to the client</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Big Picture</h1>
+					<h2>Gmail</h2>
+					<ul>
+						<li class="fragment">Client: Writing, reading email</li>
+						<li class="fragment">Server: Sending, receiving, filtering, storing email</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Big Picture</h1>
+					<h2>Twitter</h2>
+					<ul>
+						<li class="fragment">Client: Writing, reading tweets</li>
+						<li class="fragment">Server: Sending, receiving, storing tweets, favourites</li>
+						<li class="fragment">Server: Who To Follow recommendations</li>
+						<li class="fragment">Server: Turning tweets into annoying email digests</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>What's involved</h1>
+					<h2>Choosing Your Tools</h2>
+					<ul>
+						<li>There are <b>hundreds</b> of programming languages</li>
+						<li class="fragment"><code>JavaScript, BASIC, PHP, Perl, Python, Ruby, C++, Java</code></li>
+						<li class="fragment">Different dialects for telling computers how to do things</li>
+						<li class="fragment">They all have different strengths and weaknesses</li>
+						<li class="fragment">You'll need to learn one of these</li>
+						<li class="fragment">... and more</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>In the bad old days</h1>
+					<p>For every new project, we had to reinvent a lot of wheels</p>
+					<ul>
+						<li class="fragment">Telling the computer how talk to the database</li>
+						<li class="fragment">Explaining how user accounts worked</li>
+						<li class="fragment">Working out where files went</li>
+						<li class="fragment">... and what went in them</li>
+						<li class="fragment">Everyone had their own <strong>different</strong> conventions</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Sanity Prevails</h1>
+					<ul>
+						<li>In the last decade, smart people have created frameworks</li>
+						<li class="fragment">All the boilerplate code is already written</li>
+						<li class="fragment">... with best practice conventions</li>
+						<li class="fragment">You only need to write the new and interesting stuff &mdash; the stuff that makes your product <strong>different</strong></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Ruby on Rails </h1>
+					<p><code>Rails</code> &ndash; an insanely popular web application framework for <code>Ruby</code></p>
+					<ul>
+						<li class="fragment">Huge, friendly online support community</li>
+						<li class="fragment">Thousands of libraries you can freely reuse</li>
+						<li class="fragment">Shields you from moving parts you don't need to know about</li>
+						<li class="fragment">Immediate and interactive</li>
+						<li class="fragment">Easy to get started with [demo]</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Philosophical Differences</h1>
+					<p>Most languages now have Rails-inspired frameworks.</p>
+					<p>The differences between them is mostly philosophical.</p>
+					<ul>
+						<li class="fragment"><code>Perl</code>: Easy things should be easy, hard things should be possible</li>
+						<li class="fragment"><code>Python</code>: There should be one &mdash; and preferably only one &mdash; obvious way to do it. </li>
+						<li class="fragment">"<code>Ruby</code> is designed to make programmers happy"</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Success Stories</h1>
+					<p>These sites were built with Rails:</p>
+					<ul>
+						<li>Twitter</li>
+						<li>Shopify</li>
+						<li>Github</li>
+						<li>Soundcloud</li>
+						<li>Groupon</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The Other Foot</h1>
+					<ul>
+						<li>Once Rails has worked its magic on your databases and produced data for your users to consume, it's time to make it beautiful and accessible</li>
+						<li class="fragment">This is where we move to the <strong>front-end</strong>, the stuff that happens in the <strong>browser</strong></li>
+						<li class="fragment">Here we have much less choice in building out toolkits</li>
+						<li class="fragment">And much more can go wrong</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Flemish Altruism</h1>
+					<ul>
+						<li>The constituent parts are:</li>
+						<li class="fragment">The HTML which Rails has generated for you...</li>
+						<li class="fragment">Which is styled with CSS...</li>
+						<li class="fragment">And made interactive with Javascript <span class="fragment">[demo]</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Pros and Cons</h1>
+					<ul>
+						<li>The nice thing about the front-end is that it's mostly out there in the open<span class="fragment">: <code>View Source</code></span></li>
+						<li class="fragment">Also people who are good at front-end also tend to be very good at making nice looking web pages documenting it</li>
+						<li class="fragment">The bad thing is that there are so many browsers</li>
+						<li class="fragment">And one of those browsers is Internet Explorer</li>
+						<li class="fragment">Testing is very testing</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Fortunately</h1>
+					<ul>
+						<li>Smart people have made front-end much easier than it used to be</li>
+						<li class="fragment"><code>jQuery</code> makes Javascript easier, more well behaved and more fun</li>
+						<li class="fragment"><code>HTML5 Boilerplate</code> means your page should work well everywhere, right from the start</li>
+						<li class="fragment">Twitter's <code>Bootstrap</code> means you beautiful websites for non-designers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>The journey of a thousand miles</h1>
+					<ul>
+						<li class="fragment">Use Rails to get something working</li>
+						<li class="fragment">Make it pretty enough that you're not embarrassed</li>
+						<li class="fragment">Tinker with the front-end while you're building your team</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>How To Do It</h1>
+					<ul>
+						<li>Learning never ends</li>
+						<li class="fragment">There are hundreds of tutorials and textbooks for learning Rails</li>
+						<li class="fragment">Here is a program which will have you creating working prototypes in just a few <span class="fragment"><strong>intense</strong></span> days</li>
+						<li class="fragment">Or a couple of weeks in your spare time</li>
+						<li class="fragment">You can spend the rest of your life getting better at it</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Ruby on Rails Tutorials</h1>
+					<p><a href="http://ruby.railstutorial.org/" target="_blank">Michael Hartl's excellent tutorial</a></p>
+					<ul>
+						<li class="fragment">Step by step</li>
+						<li class="fragment">Installing Rails</li>
+						<li class="fragment">Creating a <strong>complete</strong> working app</li>
+						<li class="fragment">Testing</li>
+						<li class="fragment">Git version control</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Ruby on Rails Tutorials</h1>
+					<p><a href="http://railsforzombies.org/" target="_blank">Rails for Zombies</a></p>
+				</section>
+
+				<section>
+					<h1>Practicing Ruby</h1>
+					<p><a href="http://rubykoans.com/" target="_blank">Ruby Koans</a></p>
+					<ul>
+						<li class="fragment">Just the Ruby language</li>
+						<li class="fragment">Learn via automated testing</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Poignant Ruby</h1>
+					<p><a href="http://mislav.uniqpath.com/poignant-guide/" target="_blank">Why's Poignant Guide to Ruby</a></p>
+					<p>Beautiful, funny, poignant, strange</p>
+				</section>
+
+				<section>
+					<h1>Railscasts</h1>
+					<p><a href="http://railscasts.com/" target="_blank">http://railscasts.com/</a></p>
+					<p>Free, bite-size screencasts</p>
+				</section>
+
+				<section>
+					<h1>Front-end</h1>
+					<ul>
+						<li><a href="http://www.codeyear.com/" target="_blank">Code Year</a> from Code Academy will show your the ropes of Javascript</li>
+						<li><a href="http://jqfundamentals.com/">jQuery Fundamentals</a> will help you do useful things</li>
+						<li class="fragment">And you can learn (and steal) a lot just by surfing around with Web Inspector open</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>What Will Go Wrong?</h1>
+					<h2 class="fragment">Everything</h2>
+					<blockquote class="fragment">
+						If debugging is the practice of removing bugs from software... <span class="fragment">then programming must be the practice of adding them.</span>
+					</blockquote>
+					<p class="fragment">You will have to make mistakes to learn how to fix them</p>
+				</section>
+
+				<section>
+					<h1>Fixing Things</h1>
+					<ul>
+						<li class="fragment">Ruby and Rails are good at telling you when they finds a problem</li>
+						<li class="fragment">But you may not understand the error message</li>
+						<li class="fragment">Most problems will have been encountered previously</li>
+						<li class="fragment">So a quick Google seach should get you back on track</li>
+						<li class="fragment">If not: congratulations! You found a harder problem</li>
+						<li class="fragment">Get help!</li>
+				</section>
+
+				<section>
+					<h1>Additional Resources</h1>
+					<ul>
+						<li><a href="http://rubyonrails.org/" target="_blank">http://rubyonrails.org/</a></li>
+						<li><a href="http://rubyonrails.org/community" target="_blank">http://rubyonrails.org/community</a></li>
+						<li><a href="http://webchat.freenode.net/" target="_blank">#rubyonrails on Freenode IRC</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>RORO Sydney</h1>
+					<ul>
+						<li>Sydney's amazing Ruby Users Group</li>
+						<li><a href="http://ruby.org.au/meetups/syd.html" target="_blank">Monthly Meetup</a></li>
+						<li><a href="https://groups.google.com/forum/?fromgroups#!forum/rails-oceania" target="_blank">Mailing List</a></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h1>SydJS</h1>
+					<ul>
+						<li>Sydney's amazing Javascript User Group</li>
+						<li><a href="http://www.sydjs.com/" target="_blank">Monthly Meetup</a></li>
+						<li><a href="http://librelist.com/browser/sydjs/" target="_blank">Mailing List</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Hackathons</h1>
+					<ul>
+						<li class="fragment">Hackathons almost every week</li>
+						<li class="fragment">Fishburners, RORO, RailsCamp</li>
+						<li class="fragment">Check mailing lists and Twitter</li>
+						<li class="fragment">Work with and learn from other practioners</li>
+						<li class="fragment">Beginners welcome</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Don't be a help vampire</h1>
+					<ul>
+						<li>People are generally very happy to share their knowledge...</li>
+						<li class="fragment">IF you've made a fair attempt to help yourself first</li>
+						<li class="fragment">Read <a href="http://www.catb.org/esr/faqs/smart-questions.html" target="_blank">How To Ask Questions The Smart Way</a></li>
+						<li class="fragment">Read <a href="http://slash7.com/2006/12/22/vampire" target="_blank">Help Vampires: A Spotter's Guide</a></li>
+						<li class="fragment"><strong>General Rules</strong>: Google first, ask questions later. <span class="fragment">Be polite.</span> <span class="fragment">Keep trying!</span></li>
+				</section>
+
+				<section>
+					<h1>Heroku</h1>
+					<ul>
+						<li><a href="http://www.heroku.com/" target="_blank">http://www.heroku.com/</a></li>
+						<li class="fragment">Free, instant hosting</li>
+						<li class="fragment">Scales as needed</li>
+						<li class="fragment">Only pay if your app takes off</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>2 Week Schedule</h1>
+					<ul>
+						<li class="fragment">Start with a few minutes of Ruby Koans</li>
+						<li class="fragment">Work through some tutorial exercises</li>
+						<li class="fragment">Watch a Railscast</li>
+						<li class="fragment">Read some of Why's Poignant Guide in bed</li>
+						<li class="fragment">Work on the CSS and Javascript when you get stuck or need a break</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Happy hacking!</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
