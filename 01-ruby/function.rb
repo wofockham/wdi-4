@@ -1,3 +1,5 @@
+require 'pry'
+
 def area(length, width)
   a = length * width
   a
@@ -26,3 +28,5 @@ def name_tag_generator(first, last, gender, age)
     puts "Mr #{ first } #{ last }"
   end
 end
+
+binding.pry
