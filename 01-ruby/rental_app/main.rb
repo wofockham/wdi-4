@@ -3,12 +3,19 @@ require_relative 'building'
 require_relative 'apartment'
 require_relative 'person'
 
-building = nil
-print "add (p)erson or (a)partment or (b)uilding or (q)uit: "
+building = Building.new('10E21ST', 'GA', false, false, 10)
 
+print "add (p)erson or (a)partment or (q)uit: "
 response = gets.chomp.downcase
+
 while response != 'q'
   if response == 'p'
+    if building.apartments.empty?
+      puts "Please create an apartment first"
+      response = 'a'
+      next
+    end
+
     print 'name: '
     name = gets.chomp
 
@@ -30,8 +37,6 @@ while response != 'q'
     sqft = gets.to_i
 
     building.apartments[name] = Apartment.new(name, sqft, 0, 0)
-  elsif response == 'b'
-    building = Building.new('10E21ST', 'GA', false, false, 10)
   end
 
   puts building
@@ -39,7 +44,7 @@ while response != 'q'
     puts apt
   end
 
-  print "add (p)erson or (a)partment or (b)uilding or (q)uit: "
+  print "add (p)erson or (a)partment or (q)uit: "
   response = gets.chomp.downcase
 end
 # binding.pry

@@ -20,9 +20,9 @@ class Ferrari < Car
 end
 
 class Volkswagon < Car
-  def initialize
+  def initialize(color)
     @max_speed = 80
-    @color = 'garish'
+    @color = color
     @seating_material = 'tiedye'
   end
 end
