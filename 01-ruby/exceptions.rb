@@ -3,11 +3,15 @@ require 'pry'
 puts "welcome"
 
 begin
-  result = 3 / 3
+  print "What do you want to divide by?"
+  divisor = gets.to_i
+  puts "the result of 3 divided by #{ divisor } is #{ 3 / divisor }"
 rescue
-  result = 1 # Sane default
+  puts "That divisor is no good"
+  retry
+ensure
+  puts "you will ALWAYS see this message"
 end
 
-puts "The result is #{ result }"
-
-puts "thank you for using this program"
+puts "this code is about to explode"
+raise "boom!"
