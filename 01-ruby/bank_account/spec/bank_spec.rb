@@ -25,4 +25,12 @@ describe Bank do
     end
   end
 
+  describe '#deposit' do
+    it 'should deposit money into a named account' do
+      bank.create_account('Bob', 200)
+      bank.deposit('Bob', 300)
+      expect(bank.accounts['Bob']).to eq 500
+    end
+  end
+
 end
