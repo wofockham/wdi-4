@@ -1,7 +1,11 @@
-<form action="/result" method="get">
-  <input name="first" type="number" placeholder="first operand">
+<% if @result %>
+  <h2><%= @first %> <%= params[:operator] %> <%= @second %> = <%= @result %></h2>
+<% end %>
+
+<form action="/calc" method="get">
+  <input name="first" type="number" step="any" placeholder="first operand">
   <input name="operator" placeholder="operator (+ or *)">
-  <input name="second" type="number" placeholder="second operand">
+  <input name="second" type="number" step="any" placeholder="second operand">
 
   <input type="submit" value="Calculate!">
 </form>
