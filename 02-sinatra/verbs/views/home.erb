@@ -1,5 +1,19 @@
+<div>
+  <form action="/search" method="get">
+    <input type="text" name="query" placeholder="search">
+    <input type="submit" value="Search!">
+  </form>
+</div>
+
 <div class="welcome">
   <p id="intro">Welcome to our HTTP Verbs demo.</p>
   <p><a href="/contact">Contact</a></p>
   <p><a href="http://localhost:4567/processform?name=Jonesy&message=A+message+from+Jonesy&key=value">Skip straight to processing the form</a></p>
 </div>
+
+<form action="/subscribe" method="post">
+  <input type="text" name="cardholder_name" placeholder="Name">
+  <input type="text" name="cardnumber" placeholder="Number">
+  <input type="text" placeholder="CCV">
+  <input type="submit" name="Subscribe!">
+</form>
