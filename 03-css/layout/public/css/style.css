@@ -1,0 +1,45 @@
+#container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+nav a {
+  color: white;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+aside {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 15%;
+  padding: 1em;
+  background-color: #ccc;
+}
+
+aside section {
+  border-bottom: 1px solid black;
+}
+
+article {
+  width: 81.7%;
+}
+
+.gossip {
+  float: right;
+  margin-left: 1em;
+}
