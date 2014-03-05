@@ -1,0 +1,57 @@
+.invisible {
+  display: none;
+}
+
+div {
+  border: 1px solid pink;
+}
+
+.static {
+  position: static;
+}
+
+.relative {
+  position: relative;
+  padding: 10em;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  background-color: lime;
+}
+
+.absolute {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-color: pink;
+}
+
+.box {
+  position: absolute;
+  width: 5em;
+  height: 5em;
+}
+
+.box.a {
+  top: 5%;
+  left: 5%;
+  background-color: blue;
+  z-index: 3;
+}
+
+.box.b {
+  top: 7%;
+  left: 7%;
+  background-color: yellow;
+  z-index: 2;
+}
+
+.box.c {
+  top: 9%;
+  left: 9%;
+  background-color: gray;
+  z-index: 1;
+}
