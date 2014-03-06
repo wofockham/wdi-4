@@ -1,0 +1,55 @@
+<h1>HTML5 Form Inputs Demo</h1>
+<form action="/" method="post">
+
+  <label for="user_name">Name:</label>
+  <input id="user_name" name="name" placeholder="Please enter your name" required autofocus>
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" placeholder="You can see this">
+
+  <label for="about_me">About me:</label>
+  <textarea id="about_me" name="about_me" placeholder="Short biographical story"></textarea>
+
+  <label for="select_demo">Select demo:</label>
+  <select id="select_demo" name="betsy" multiple>
+    <option>Some select menu option</option>
+    <option>Alternatively</option>
+    <option value="Hotdogs" disabled>Fast food option</option>
+    <option value="12" selected>Fashion</option>
+    <option value="13">Hair extensions</option>
+  </select>
+
+  <label for="number_demo">Number:</label>
+  <input type="number" id="number_demo" name="number_demo" step="any">
+
+  <label for="url_demo">Homepage:</label>
+  <input type="url" id="url_demo" name="url_demo">
+
+  <label for="email_demo">Email address:</label>
+  <input type="email" id="email_demo" name="email_demo">
+
+  <label for="file_demo">File demo:</label>
+  <input type="file" id="file_demo" name="file_demo">
+
+  <label for="color_demo">Color demo:</label>
+  <input type="color" id="color_demo" name="color_demo">
+
+
+  <label for="date_demo">Date demo:</label>
+  <input type="date" id="date_demo" name="date_demo">
+
+  <label for="range_demo">Range demo:</label>
+  <input type="range" id="range_demo" name="range_demo" min="0" max="100" value="50" step="10">
+
+  <label for="checkbox">Checkbox:</label>
+  <input id="checkbox" name="checkbox_1" type="checkbox" value="777"> option<br>
+
+  <label>Radio:</label>
+  <input type="radio" id="group1-1" name="group1" value="1" checked> small<br>
+  <input type="radio" id="group1-2" name="group1" value="2"> medium<br>
+  <input type="radio" id="group1-3" name="group1" value="3"> large<br>
+
+  <p>
+    <button class="send">Send</button>
+  </p>
+</form>
