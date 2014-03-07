@@ -1,0 +1,15 @@
+
+- Company Name: Burger King
+- Good/Service Provided: Social Media Services
+- Cost: $100000
+- Thank you for your patronage
+
+- Company Name: Dairy Farmers
+- Good/Service Provided: Analytics
+- Cost: $12
+- Thank you for your patronage
+
+- Company Name: GA
+- Good/Service Provided: Teaching
+- Cost: $0
+- Thank you for your patronage
