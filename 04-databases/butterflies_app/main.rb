@@ -9,7 +9,7 @@ end
 
 get '/butterflies' do
   db = SQLite3::Database.open('butterflies.db')
-  @butterflies = db.execute('SELECT * FROM butterflies')
+  @butterflies = db.execute('SELECT * FROM butterflies;')
   erb :butterflies
 end
 
