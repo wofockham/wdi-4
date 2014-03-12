@@ -8,17 +8,19 @@ require 'pry'
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :host => "localhost",
+  :port => 5432,
   :username => 'inceptor', #your postgres.app username
   :password => "",
   :database => "butterflies_app"
 )
+#ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class Butterfly < ActiveRecord::Base
   attr_accessible :name, :family, :photo
 end
 
 before do
-  @families = query_db('SELECT DISTINCT family FROM butterflies;')
+  @families = Butterfly.select(:family).distinct
 end
 
 get '/' do
@@ -27,7 +29,7 @@ get '/' do
 end
 
 get '/butterflies' do
-  @butterflies = query_db('SELECT * FROM butterflies;')
+  @butterflies = Butterfly.all
   erb :butterflies
 end
 
@@ -36,47 +38,41 @@ get '/butterflies/new' do
 end
 
 post '/butterflies/create' do
-  sql = "INSERT INTO butterflies (name, family, photo)
-          VALUES ('#{params[:name]}', '#{params[:family]}', '#{params[:photo]}');"
-  query_db(sql)
-  redirect to('/butterflies')
+  butterfly = Butterfly.new
+  butterfly.name = params[:name]
+  butterfly.family = params[:family]
+  butterfly.photo = params[:photo]
+  butterfly.save
+  redirect to("/butterflies/#{ butterfly.id }")
 end
 
 post '/butterflies/update' do
-  sql = "UPDATE butterflies SET
-    name='#{params[:name].gsub("'", "''")}',
-    family='#{params[:family].gsub("'", "''")}',
-    photo='#{params[:photo].gsub("'", "''")}' WHERE id=#{params[:id]}"
-  query_db(sql)
+  butterfly = Butterfly.find params[:id]
+  butterfly.name = params[:name]
+  butterfly.family = params[:family]
+  butterfly.photo = params[:photo]
+  butterfly.save
   redirect to("/butterflies/#{params[:id]}")
 end
 
 get '/butterflies/:id' do
-  results = query_db("SELECT * FROM butterflies WHERE id=#{ params[:id] }")
-  @butterfly = results.first
+  @butterfly = Butterfly.find params[:id]
   erb :butterfly
 end
 
 get '/butterflies/:id/edit' do
-  results = query_db("SELECT * FROM butterflies WHERE id=#{ params[:id] }")
-  @butterfly = results.first
+  @butterfly = Butterfly.find params[:id]
   erb :edit_butterfly
 end
 
 get '/butterflies/:id/delete' do
-  query_db("DELETE FROM butterflies WHERE id=#{ params[:id] }")
+  butterfly = Butterfly.find params[:id]
+  butterfly.destroy
   redirect to('/butterflies')
 end
 
 get '/butterflies/family/:family' do
-  @butterflies = query_db("SELECT * FROM butterflies WHERE family ILIKE '#{params[:family]}'")
+  @butterflies = Butterfly.where(:family => params[:family])
   erb :butterflies
 end
 
-def query_db(sql)
-  db = PG.connect(:dbname =>'butterflies_app', :host => 'localhost')
-  puts "SQL: #{ sql }"
-  results = db.exec(sql)
-  db.close
-  results
-end

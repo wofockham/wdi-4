@@ -13,7 +13,7 @@
       <a href="/butterflies/new">Add new butterfly</a>
       <a href="/butterflies">All butterflies</a>
       <% @families.each do |family| %>
-        <a href="/butterflies/family/<%= family %>"><%= family %></a>
+        <a href="/butterflies/family/<%= family["family"].downcase %>"><%= family['family'] %></a>
       <% end %>
     </nav>
 
