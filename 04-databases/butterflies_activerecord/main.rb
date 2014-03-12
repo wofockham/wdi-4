@@ -9,6 +9,7 @@ ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :host => "localhost",
   :port => 5432,
+  :pool => 8,
   :username => 'inceptor', #your postgres.app username
   :password => "",
   :database => "butterflies_app"
@@ -20,11 +21,11 @@ class Butterfly < ActiveRecord::Base
 end
 
 before do
-  @families = Butterfly.select(:family).distinct
+  @families = Butterfly.uniq.pluck(:family)
 end
 
 get '/' do
-  binding.pry
+  #binding.pry
   erb :home
 end
 
