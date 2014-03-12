@@ -1,0 +1,21 @@
+<h2>Course</h2>
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <a href="/courses/<%= course['id'] %>">
+        <%= course['name'] %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Students</h2>
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <a href="/students/<%= student['id'] %>">
+        <%= student['first_name'] %>
+      </a>
+    </li>
+  <% end %>
+</ul>
