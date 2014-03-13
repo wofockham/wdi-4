@@ -17,7 +17,11 @@ ActiveRecord::Base.establish_connection(
 #ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 class Butterfly < ActiveRecord::Base
-  attr_accessible :name, :family, :photo
+  belongs_to :plant
+end
+
+class Plant < ActiveRecord::Base
+  has_many :butterflies
 end
 
 before do
@@ -25,7 +29,6 @@ before do
 end
 
 get '/' do
-  #binding.pry
   erb :home
 end
 
@@ -77,3 +80,21 @@ get '/butterflies/family/:family' do
   erb :butterflies
 end
 
+get '/plants/new' do
+  erb :new_plant
+end
+
+post '/plants/create' do
+  plant = Plant.new
+  plant.name = params[:name]
+  plant.latin_name = params[:latin_name]
+  plant.region = params[:region]
+  plant.photo = params[:photo]
+  plant.save
+  redirect to("/plants/#{plant.id}")
+end
+
+get '/plants/:id' do
+  @plant = Plant.find params[:id]
+  erb :plant
+end
