@@ -80,6 +80,11 @@ get '/butterflies/family/:family' do
   erb :butterflies
 end
 
+get '/plants' do
+  @plants = Plant.all
+  erb :plants
+end
+
 get '/plants/new' do
   erb :new_plant
 end
@@ -92,6 +97,27 @@ post '/plants/create' do
   plant.photo = params[:photo]
   plant.save
   redirect to("/plants/#{plant.id}")
+end
+
+get '/plants/:id/edit' do
+  @plant = Plant.find params[:id]
+  erb :edit_plant
+end
+
+post '/plants/update' do
+  plant = Plant.find params[:id]
+  plant.name = params[:name]
+  plant.latin_name = params[:latin_name]
+  plant.region = params[:region]
+  plant.photo = params[:photo]
+  plant.save
+  redirect to("/plants/#{plant.id}")
+end
+
+get '/plants/:id/delete' do
+  plant = Plant.find params[:id]
+  plant.destroy
+  redirect to('/plants')
 end
 
 get '/plants/:id' do

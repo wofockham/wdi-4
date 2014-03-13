@@ -32,7 +32,8 @@ label {
   text-align: center;
 }
 
-.butterfly img {
+.butterfly img,
+.plant img {
   width: 100%;
 }
 

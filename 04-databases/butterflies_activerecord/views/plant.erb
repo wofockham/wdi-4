@@ -1,0 +1,16 @@
+<section class="plant">
+  <h2><%= @plant.name %></h2>
+  <p>Region: <%= @plant.region %></p>
+  <h3>Larval plant for these butterflies:</h3>
+  <ul>
+    <% @plant.butterflies.each do |butterfly| %>
+      <li><a href="/butterflies/<%= butterfly.id %>"><%= butterfly.name %></a></li>
+    <% end %>
+  </ul>
+  <img src="<%= @plant.photo %>">
+  <aside class="controls">
+    <a href="/plants/<%= @plant.id %>/edit">Edit</a>
+    |
+    <a href="/plants/<%= @plant.id %>/delete">Delete</a>
+  </aside>
+</section>

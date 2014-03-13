@@ -1,0 +1,11 @@
+<h1>Index of plants</h1>
+<ul>
+  <% @plants.each do |plant| %>
+    <li>
+      <a href="/plants/<%= plant.id %>">
+        <img class="thumb" src="<%= plant.photo %>">
+        <%= plant.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
