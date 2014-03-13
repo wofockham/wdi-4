@@ -14,5 +14,15 @@
     <input type="url" name="photo" id="photo" required>
   </p>
 
+  <p>
+    <label for="plant_id">Larval Plant: </label>
+    <select name="plant_id" id="plant_id">
+      <option value="0">None</option>
+      <% @plants.each do |plant| %>
+        <option value="<%= plant.id %>"><%= plant.name %></option>
+      <% end %>
+    </select>
+  </p>
+
   <button>Create butterfly!</button>
 </form>

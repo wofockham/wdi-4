@@ -38,6 +38,7 @@ get '/butterflies' do
 end
 
 get '/butterflies/new' do
+  @plants = Plant.all
   erb :new_butterfly
 end
 
@@ -46,6 +47,13 @@ post '/butterflies/create' do
   butterfly.name = params[:name]
   butterfly.family = params[:family]
   butterfly.photo = params[:photo]
+
+  if (params[:plant_id].to_i > 0)
+    plant = Plant.find params[:plant_id]
+    butterfly.plant = plant
+    # butterfly.plant_id = params[:plant_id]
+  end
+
   butterfly.save
   redirect to("/butterflies/#{ butterfly.id }")
 end
@@ -55,6 +63,9 @@ post '/butterflies/update' do
   butterfly.name = params[:name]
   butterfly.family = params[:family]
   butterfly.photo = params[:photo]
+
+  butterfly.plant_id = params[:plant_id]
+
   butterfly.save
   redirect to("/butterflies/#{params[:id]}")
 end
@@ -66,6 +77,7 @@ end
 
 get '/butterflies/:id/edit' do
   @butterfly = Butterfly.find params[:id]
+  @plants = Plant.all
   erb :edit_butterfly
 end
 

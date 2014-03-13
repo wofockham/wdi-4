@@ -1,6 +1,7 @@
 <section class="butterfly">
   <h2><%= @butterfly.name %></h2>
   <p>Family: <%= @butterfly.family %></p>
+  <p>Larval plant: <%= @butterfly.plant ? @butterfly.plant.name : "None" %></p>
   <img src="<%= @butterfly.photo %>">
   <aside class="controls">
     <a href="/butterflies/<%= @butterfly.id %>/edit">Edit</a>
