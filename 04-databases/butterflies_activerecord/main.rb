@@ -16,13 +16,8 @@ ActiveRecord::Base.establish_connection(
 )
 #ActiveRecord::Base.logger = Logger.new(STDOUT)
 
-class Butterfly < ActiveRecord::Base
-  belongs_to :plant
-end
-
-class Plant < ActiveRecord::Base
-  has_many :butterflies
-end
+require_relative './models/butterfly.rb'
+require_relative './models/plant.rb'
 
 before do
   @families = Butterfly.uniq.pluck(:family)
