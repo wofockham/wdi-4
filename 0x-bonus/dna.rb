@@ -8,14 +8,8 @@ class DNA
   end
 
   def count(needle)
-    nucleotide_count = 0
-    nucleotides = @strand.split('')
-    nucleotides.each do |n|
-      if (needle.upcase == n.upcase)
-        nucleotide_count += 1
-      end
-    end
-    nucleotide_count
+    needle = needle.to_s
+    @strand.count(needle.upcase)
   end
 
   def nucleotide_counts
@@ -28,6 +22,7 @@ class DNA
 end
 
 s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-dna = DNA.new(s)
+dna = DNA.new(s.split(''))
 
+puts dna.count :a
 puts dna.nucleotide_counts
