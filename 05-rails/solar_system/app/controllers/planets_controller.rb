@@ -2,7 +2,7 @@ class PlanetsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @planets = Planet.all
+    @planets = Planet.order(:orbit)
   end
 
   def new
@@ -19,6 +19,12 @@ class PlanetsController < ApplicationController
 
   def edit
     @planet = Planet.find params[:id]
+  end
+
+  def update
+    planet = Planet.find params[:id]
+    planet.update_attributes(params[:planet])
+    redirect_to planets_path
   end
 
   def destroy
