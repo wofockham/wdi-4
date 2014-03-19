@@ -3,3 +3,6 @@
 <p>Year: <%= @work.year %></p>
 <p>Medium: <%= @work.medium %></p>
 <p>Style: <%= @work.style %></p>
+
+<%= link_to 'Edit work', edit_work_path(@work) %>
+<%= link_to 'Delete work', @work, :method => :delete, :confirm => "For realsies?" %>

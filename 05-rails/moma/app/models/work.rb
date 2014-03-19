@@ -10,8 +10,10 @@
 #  image      :text
 #  created_at :datetime
 #  updated_at :datetime
+#  artist_id  :integer
 #
 
 class Work < ActiveRecord::Base
   attr_accessible :title, :year, :medium, :style, :image
+  belongs_to :artist
 end

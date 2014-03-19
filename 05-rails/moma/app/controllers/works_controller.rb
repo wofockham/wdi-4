@@ -4,6 +4,8 @@ class WorksController < ApplicationController
   end
 
   def create
+    work = Work.create params[:work]
+    redirect_to work
   end
 
   def new
@@ -11,6 +13,7 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @work = Work.find params[:id]
   end
 
   def show
@@ -18,8 +21,14 @@ class WorksController < ApplicationController
   end
 
   def update
+    work = Work.find params[:id]
+    work.update_attributes params[:work]
+    redirect_to work
   end
 
   def destroy
+    work = Work.find params[:id]
+    work.destroy
+    redirect_to works_path
   end
 end

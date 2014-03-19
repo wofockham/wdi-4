@@ -5,3 +5,6 @@
 <p>Nationality: <%= @artist.nationality %></p>
 <p>Date of birth: <%= @artist.dob.strftime('%-d %B %Y')%></p>
 <p>Period: <%= @artist.period %></p>
+
+<%= link_to 'Edit artist', edit_artist_path(@artist) %>
+<%= link_to 'Delete artist', @artist, :method => :delete %>
