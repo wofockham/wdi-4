@@ -1,0 +1,7 @@
+<h2><%= @artist.name %></h2>
+
+<%= image_tag @artist.image %>
+
+<p>Nationality: <%= @artist.nationality %></p>
+<p>Date of birth: <%= @artist.dob.strftime('%-d %B %Y')%></p>
+<p>Period: <%= @artist.period %></p>
