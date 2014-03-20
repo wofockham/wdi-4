@@ -1,0 +1,22 @@
+nav {
+  background-color: pink;
+  padding: 1em;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin-left: 1em;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-shadow: 0 0 5px red;
+      }
+    }
+  }
+}
