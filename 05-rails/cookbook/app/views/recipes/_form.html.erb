@@ -1,0 +1,21 @@
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :course %>
+  <%= f.text_field :course %>
+
+  <%= f.label :cooktime, "Cooking time" %>
+  <%= f.number_field :cooktime %>
+
+  <%= f.label :servingsize, "Serving size" %>
+  <%= f.number_field :servingsize %>
+
+  <%= f.label :instructions %>
+  <%= f.text_area :instructions %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+<% end %>

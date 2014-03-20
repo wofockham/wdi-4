@@ -1,2 +1,13 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<p><%= @recipe.name %></p>
+<p><%= link_to('Edit', edit_recipe_path(@recipe)) %> <%= link_to('Delete', @recipe, :method => :delete) %></p>
+<p>Course: <%= @recipe.course %></p>
+<p>Serves: <%= @recipe.servingsize %></p>
+<p><%= @recipe.instructions %></p>
+<p><%= image_tag @recipe.image, :class => 'recipe' %></p>
+
+<% @recipe.ingredients.each do |ingredient| %>
+  <p><%= ingredient.name %></p>
+  <p><%= image_tag ingredient.image, :class => 'ingredient' %></p>
+<% end %>
+
+
