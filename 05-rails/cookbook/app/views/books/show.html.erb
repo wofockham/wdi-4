@@ -1,5 +1,6 @@
 <h2><%= @book.title %></h2>
-<p><%= link_to('Edit', edit_book_path(@book)) %> <%= link_to('Delete', book_path(@book), :method => :delete) %></p>
+<p><%= link_to('Edit', edit_book_path(@book)) %>
+   <%= link_to('Delete', @book, :method => :delete) %></p>
 <p><%= @book.cuisine %></p>
 <p><%= @book.chef %></p>
 <p><%= image_tag @book.image %></p>

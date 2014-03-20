@@ -11,5 +11,10 @@
   <%= f.label :image %>
   <%= f.url_field :image %>
 
+  <% Recipe.order(:name).each do |recipe| %>
+    <span><%= recipe.name %></span>
+    <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes) %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
