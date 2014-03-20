@@ -1,2 +1,4 @@
-<h1>Ingredients#show</h1>
-<p>Find me in app/views/ingredients/show.html.erb</p>
+<p><%= @ingredient.measurement %> <%= @ingredient.name %></p>
+<p><%= link_to 'Edit', edit_ingredient_path(@ingredient) %> <%= link_to 'Delete', @ingredient, :method => :delete %></p>
+<p><%= number_to_currency @ingredient.cost %></p>
+<p><%= image_tag @ingredient.image, :class => 'ingredient' %></p>

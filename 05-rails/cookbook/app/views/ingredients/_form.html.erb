@@ -1,0 +1,15 @@
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :measurement %>
+  <%= f.text_field :measurement %>
+
+  <%= f.label :cost %>
+  <%= f.number_field :cost, :step => :any %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+<% end %>
