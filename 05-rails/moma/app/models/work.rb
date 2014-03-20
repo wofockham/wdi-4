@@ -14,6 +14,6 @@
 #
 
 class Work < ActiveRecord::Base
-  attr_accessible :title, :year, :medium, :style, :image
+  attr_accessible :title, :year, :medium, :style, :image, :artist_id
   belongs_to :artist
 end

@@ -14,5 +14,8 @@
   <%= f.label :image %>
   <%= f.url_field :image %>
 
+  <%= f.label :artist_id %>
+  <%= f.select :artist_id, Artist.all.map {|artist| [artist.name, artist.id]}, :include_blank => true %>
+
   <%= f.submit %>
 <% end %>

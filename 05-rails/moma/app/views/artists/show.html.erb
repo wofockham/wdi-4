@@ -6,5 +6,9 @@
 <p>Date of birth: <%= @artist.dob.strftime('%-d %B %Y')%></p>
 <p>Period: <%= @artist.period %></p>
 
+<% @artist.works.each do |work| %>
+  <%= link_to(image_tag(work.image, :height => 100), work) %>
+<% end %>
+
 <%= link_to 'Edit artist', edit_artist_path(@artist) %>
 <%= link_to 'Delete artist', @artist, :method => :delete %>
