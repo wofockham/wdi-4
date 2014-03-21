@@ -1,9 +1,14 @@
+- if @user.errors.any?
+  %ol
+    - @user.errors.full_messages.each do |msg|
+      %li= msg
+
 %section.signup
   = form_for @user do |f|
     = f.label :name
     = f.text_field :name, :autofocus => true
     = f.label :image
-    = f.url_field :image
+    = f.url_field :image, :required => true
     = f.label :password
     = f.password_field :password
     = f.label :password_confirmation

@@ -11,8 +11,10 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :image
+  attr_accessible :name, :image, :password, :password_confirmation
   has_many :mixtapes
 
   has_secure_password
+  validates :image, :presence => true
+  validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
 end
