@@ -33,7 +33,7 @@ group :doc do
 end
 
 gem 'haml'
-gem 'sextant'
+#gem 'sextant'
 gem 'bcrypt-ruby'
 
 # Additional debugging gems.
