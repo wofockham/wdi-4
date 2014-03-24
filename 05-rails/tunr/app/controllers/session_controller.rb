@@ -9,6 +9,7 @@ class SessionController < ApplicationController
       redirect_to root_path
     else
       session[:user_id] = nil
+      flash[:notice] = "Incorrect username or password. Please try again."
       redirect_to login_path
     end
   end
