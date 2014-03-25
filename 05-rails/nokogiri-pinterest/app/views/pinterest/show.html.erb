@@ -1,0 +1,11 @@
+<h1>
+  <h1>ALL THESE IMAGES BELONG TO JOEL AND ARE NOT FROM PINTEREST</h1>
+</h1>
+
+<h3>You searched for: <%= @query %></h3>
+
+<div id="pins">
+  <% @urls.each do |url| %>
+    <%= image_tag url %>
+  <% end %>
+</div>
