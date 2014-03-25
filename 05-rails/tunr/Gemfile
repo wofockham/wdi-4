@@ -35,17 +35,18 @@ end
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
-
-# Additional debugging gems.
-gem 'pry-rails'
-gem 'pry-debugger'
-gem 'pry-stack_explorer'
-gem 'better_errors'
-gem 'binding_of_caller'
-
 gem 'protected_attributes'
 
-gem 'annotate'
+group :development do
+  # Additional debugging gems.
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-stack_explorer'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'annotate'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
