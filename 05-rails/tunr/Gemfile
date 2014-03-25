@@ -36,6 +36,7 @@ gem 'haml'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'protected_attributes'
+gem 'geocoder'
 
 group :development do
   # Additional debugging gems.

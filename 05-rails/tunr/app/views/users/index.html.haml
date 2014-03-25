@@ -1,3 +1,5 @@
 %ol
   - @users.each do |user|
     %li= user.name
+    %iframe{:width => 600, :height => 450, :src => "https://www.google.com/maps/embed/v1/place?key=AIzaSyAAiCRdJuc3KbZmfKzLhPkm4DAoG5-7lcA&q=#{ user.latitude },#{ user.longitude }" }
+
