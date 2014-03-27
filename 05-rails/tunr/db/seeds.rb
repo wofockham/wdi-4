@@ -21,9 +21,9 @@ al1 = Album.create(:name => 'Impressions')
 al2 = Album.create(:name => 'In On The Killtaker')
 al3 = Album.create(:name => 'Systems/Layers')
 
-u1 = User.create(:name => 'Alice')
-u2 = User.create(:name => 'Bob')
-u3 = User.create(:name => 'Max')
+u1 = User.create(:name => 'Alice', :password => 'password', :password_confirmation => 'password')
+u2 = User.create(:name => 'Bob', :password => 'password', :password_confirmation => 'password')
+u3 = User.create(:name => 'Max', :password => 'password', :password_confirmation => 'password')
 
 m1 = Mixtape.create(:name => 'Code Jams')
 m2 = Mixtape.create(:name => 'Breakfast')

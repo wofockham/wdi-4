@@ -19,9 +19,10 @@ class User < ActiveRecord::Base
   has_many :mixtapes
 
   has_secure_password
-  validates :image, :presence => true
+  #validates :image, :presence => true
   validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 2 }
 
   geocoded_by :address
   after_validation :geocode
+
 end
