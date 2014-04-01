@@ -6,24 +6,26 @@ area - Calculates the area of the rectangle
 perimeter - Calculates the perimeter of the rectangle
 */
 
-var rectangleFactory = function (length, width) {
-  return {
-    length: length,
-    width: width,
-    isSquare: function () {
-      return this.length === this.width;
-    },
-    area: function () {
-      return this.length * this.width;
-    },
-    perimeter: function () {
-     return 2 * (this.length + this.width);
-    }
+var Rectangle = function (length, width) {
+  this.length = length;
+  this.width = width;
+  // Add a method by adding a new key to `this`.
+  this.isSquare = function () {
+    return this.length === this.width;
   };
 };
 
-var rectangle = rectangleFactory(4, 6);
-var square = rectangleFactory(5, 5);
+// Adding methods by "extending" the Rectangle prototype.
+Rectangle.prototype.area = function () {
+  return this.length * this.width;
+};
+
+Rectangle.prototype.perimeter = function () {
+ return 2 * (this.length + this.width);
+};
+
+var rectangle = new Rectangle(4, 6);
+var square = new Rectangle(5, 5);
 
 console.log(rectangle.isSquare());
 console.log(rectangle.area());
