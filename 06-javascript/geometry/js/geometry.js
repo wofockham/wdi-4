@@ -8,17 +8,18 @@ perimeter - Calculates the perimeter of the rectangle
 
 var rectangle = {
   length: 4,
-  width: 4
+  width: 4,
+  isSquare: function () {
+    return this.length === this.width;
+  },
+  area: function () {
+    return this.length * this.width;
+  },
+  perimeter: function () {
+   return 2 * (this.length + this.width);
+  }
 };
 
-var isSquare = function (shape) {
-  return shape.length === shape.width;
-};
-
-var area = function (shape) {
-  return shape.length * shape.width;
-};
-
-var perimeter = function (shape) {
-  return 2 * (shape.length + shape.width);
-}
+console.log(rectangle.isSquare());
+console.log(rectangle.area());
+console.log(rectangle.perimeter());
