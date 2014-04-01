@@ -3,12 +3,57 @@ var getOperator = function () {
 };
 
 // Returns a floating point number.
-var getOperand = function () {
-  var result = prompt('Please enter an operand');
-  result = parseFloat(result);
-  return result;
+var getOperands = function () {
+  var result = prompt('Please enter operands, separated by commas');
+  if (! result) {
+    return [];
+  };
+  var operands = result.split(',');
+  for (var i = 0; i < operands.length; i++) {
+    operands[i] = parseFloat(operands[i]);
+  };
+  return operands;
 };
 
+var doOperation = function(operator, operands) {
+  var result = 0;
+  switch(operator) {
+    case '+':
+      for (var i = 0; i < operands.length; i++) {
+        result += operands[i];
+      }
+      break;
+    case '-':
+      for (var i = 0; i < operands.length; i++) {
+        result -= operands[i];
+      }
+      break;
+    case '*':
+      result = 1; // Result 0 would result in 0*op[0]*op[1]*op[2]*... which => 0
+      for (var i = 0; i < operands.length; i++) {
+        result = result * operands[i];
+      }
+      break;
+    case '/':
+      result = operands[0];
+      for (var i = 1; i < operands.length; i++) {
+        result = result / operands[i];
+      }
+      break;
+    case '%':
+      result = operands[0];
+      for (var i = 1; i < operands.length; i++) {
+        result = result % operands[i];
+      }
+      break;
+    case '√':
+    case 'sqrt':
+      result = Math.sqrt(operands[0]);
+      break;
+  };
+
+  return result;
+}
 
 var calculate = function () {
   var operator = getOperator();
@@ -17,29 +62,11 @@ var calculate = function () {
     return 'quit';
   }
 
-  var operandA = getOperand();
-  var operandB = getOperand();
+  var operands = getOperands();
 
-  console.log(operator, operandA, operandB);
+  result = doOperation(operator, operands);
 
-  var result;
-
-  if (operator == '+') {
-    result = operandA + operandB;
-  } else if (operator == '-') {
-    result = operandA - operandB;
-  } else if (operator == '*') {
-    result = operandA * operandB;
-  } else if (operator == '/') {
-    result = operandA / operandB;
-  } else if (operator == '%') {
-    result = operandA % operandB;
-  } else if (operator == '√') {
-    result = Math.sqrt(operandA);
-  }
-
-  console.log(operandA, operator, operandB, '=', result);
-  alert(result);
+  console.log(operator, operands, '=', result);
 };
 
 while (calculate() != 'quit') {}; // Sorry about this.
