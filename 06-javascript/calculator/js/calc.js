@@ -54,7 +54,7 @@ var calculate = function () {
 
   var operands = getOperands();
 
-  result = doOperation(operator, operands);
+  var result = doOperation(operator, operands);
 
   console.log(operator, operands, '=', result);
 };

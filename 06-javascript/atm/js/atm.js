@@ -2,7 +2,8 @@
 // The load event fires at the end of the document loading process.
 // At this point, all of the objects in the document are in the DOM,
 // and all the images and sub-frames have finished loading.
-window.onload = function () {
+
+$(document).ready(function () {
 
   var ATM = {
     checkingBalance: 0,
@@ -57,29 +58,29 @@ window.onload = function () {
     }
   };
 
-  var checkingInput = document.getElementById('checkingAmount');
-  var savingsInput = document.getElementById('savingsAmount');
+  var $checkingInput = $('#checkingAmount');
+  var $savingsInput = $('#savingsAmount');
 
-  var checkingAmount = document.getElementById('balance1');
-  var savingsAmount = document.getElementById('balance2');
+  var $checkingAmount = $('#balance1');
+  var $savingsAmount = $('#balance2');
 
   var updateChecking = function() {
-    amount = '$' + ATM.checkingBalance.toFixed(2);
-    checkingAmount.innerHTML = amount;
+    var amount = '$' + ATM.checkingBalance.toFixed(2);
+    $checkingAmount.text(amount);
     if (ATM.checkingBalance === 0) {
-      checkingAmount.className = 'balance zero';
+      $checkingAmount.addClass('zero');
     } else {
-      checkingAmount.className = 'balance';
+      $checkingAmount.removeClass('zero');
     }
   };
 
   var updateSavings = function() {
-    amount = '$' + ATM.savingsBalance.toFixed(2);
-    savingsAmount.innerHTML = amount;
+    var amount = '$' + ATM.savingsBalance.toFixed(2);
+    $savingsAmount.text(amount);
     if (ATM.savingsBalance === 0) {
-      savingsAmount.className = 'balance zero';
+      $savingsAmount.addClass('zero');
     } else {
-      savingsAmount.className = 'balance';
+      $savingsAmount.removeClass('zero');
     }
   };
 
@@ -89,28 +90,28 @@ window.onload = function () {
   };
 
   // The click event is raised when the user clicks on an element.
-  document.getElementById("checkingDeposit").addEventListener('click', function (event) {
-    var balance = ATM.checkingDeposit(checkingInput.value);
+  $("#checkingDeposit").on('click', function (event) {
+    var balance = ATM.checkingDeposit($checkingInput.val());
     updateAccounts();
-    checkingInput.value = '';
+    $checkingInput.val('');
   });
 
-  document.getElementById("savingsDeposit").addEventListener('click', function (event) {
-    var balance = ATM.savingsDeposit(savingsInput.value);
+  $("#savingsDeposit").on('click', function (event) {
+    var balance = ATM.savingsDeposit($savingsInput.val());
     updateAccounts();
-    savingsInput.value = '';
+    $savingsInput.val('');
   });
 
-  document.getElementById("checkingWithdraw").addEventListener('click', function (event) {
-    var balance = ATM.checkingWithdraw(checkingInput.value);
+  $("#checkingWithdraw").on('click', function (event) {
+    var balance = ATM.checkingWithdraw($checkingInput.val());
     updateAccounts();
-    checkingInput.value = '';
+    $checkingInput.val('');
   });
 
-  document.getElementById("savingsWithdraw").addEventListener('click', function (event) {
-    var balance = ATM.savingWithdraw(savingsInput.value);
+  $("#savingsWithdraw").on('click', function (event) {
+    var balance = ATM.savingWithdraw($savingsInput.val());
     updateAccounts();
-    savingsInput.value = '';
+    $savingsInput.val('');
   });
 
   updateAccounts();
@@ -118,4 +119,4 @@ window.onload = function () {
   // window.ohGod = function () {
   //   debugger;
   // };
-};
+});
