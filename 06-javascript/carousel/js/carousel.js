@@ -10,7 +10,7 @@ $(document).ready(function () {
     var width = $('img:first').width();
     var currentPos = $carousel.css('left');
     $carousel.animate({
-      left: parseInt(currentPos, 10) - parseInt(width, 10),
+      left: parseInt(currentPos, 10) - parseInt(width, 10)
     });
   });
 
