@@ -12,6 +12,21 @@ body {
   margin: auto;
 }
 
+form > input {
+  font-size: 200%;
+  width: 95%;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+  margin: auto;
+  display: block;
+  color: purple;
+}
+
+form > button {
+  float: right;
+}
+
 .task {
   background-color: #4aa;
   border: 1px solid white;
