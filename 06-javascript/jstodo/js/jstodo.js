@@ -1,10 +1,30 @@
 $(document).ready(function () {
 
-  $('.task button').on('click', function () {
+  $('#tasks').on('click', '.task button', function () {
     var $task = $(this).closest('.task');
-    console.log('thanks for clicking', this, $task);
+
+    var taskID = $task.attr('data-taskID');
+    var task = jsTodoApp.tasks[taskID];
+    task.completedAt = (new Date()).toString();
+
+    console.log('you completed this task', task);
+
     $task.fadeOut(function () {
-      $task.appendTo('#completed').fadeIn();
+      jsTodoApp.showTasks();
+    });
+  });
+
+  $('#completed').on('click', '.task button', function () {
+    var $task = $(this).closest('.task');
+
+    var taskID = $task.attr('data-taskID');
+    var task = jsTodoApp.tasks[taskID];
+    delete task.completedAt;
+
+    console.log('you uncompleted this task', task);
+
+    $task.fadeOut(function () {
+      jsTodoApp.showTasks();
     });
   });
 
@@ -13,7 +33,6 @@ $(document).ready(function () {
     var $input = $('#new_task');
     var description = $input.val();
     $input.val('');
-    console.log('ready to create new task', description);
     jsTodoApp.createTask(description);
     jsTodoApp.showTasks();
     console.log(jsTodoApp.tasks);
@@ -22,11 +41,12 @@ $(document).ready(function () {
 
 var jsTodoApp = {
   tasks: [],
-
+  nextID: 0,
   createTask: function (description) {
     var task = {
       'description': description,
-      createdAt: (new Date()).toString()
+      createdAt: (new Date()).toString(),
+      id: this.nextID++
     };
 
     this.tasks.push(task);
@@ -34,30 +54,19 @@ var jsTodoApp = {
   },
 
   showTasks: function () {
+    $('.task').remove();
+
     var task_format = $('#task_template').html();
     var task_html = _.template(task_format);
 
-    _.each(this.tasks, function (task) {
+    // Display each of the incomplete tasks.
+    _.each(jsTodoApp.tasks, function (task) {
       var html = task_html(task);
-      $(html).appendTo('#tasks');
+      if (task.completedAt) {
+        $(html).appendTo('#completed');
+      } else {
+        $(html).appendTo('#tasks');
+      }
     });
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

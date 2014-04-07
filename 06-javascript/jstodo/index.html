@@ -22,45 +22,25 @@
 
       <h2>Tasks Todo</h2>
 
-      <div class="task">
-        <h2>Complete styling</h2>
-        <p>April 7, 2014</p>
-        <button>Completed</button>
-      </div>
-
-      <div class="task">
-        <h2>Complete styling</h2>
-        <p>April 7, 2014</p>
-        <button>Completed</button>
-      </div>
-
-      <div class="task">
-        <h2>Complete styling</h2>
-        <p>April 7, 2014</p>
-        <button>Completed</button>
-      </div>
-
     </section>
 
     <section id="completed">
 
       <h2>Completed Tasks</h2>
 
-      <div class="task">
-        <h2>Complete styling</h2>
-        <p>April 7, 2014</p>
-        <button>Incomplete</button>
-      </div>
-
     </section>
 
   </div>
 
   <script type="text/underscore-template" id="task_template">
-      <div class="task">
+      <div class="task" data-taskID="<%= id %>">
         <h2><%= description %></h2>
-        <p class="date_formatting"><%= createdAt %></p>
-        <button>Completed</button>
+        <p><strong>Created at:</strong> <%= createdAt %></p>
+        <% if (typeof(completedAt) != 'undefined') { %>
+          <p><strong>Completed at:</strong>
+          <%= completedAt %>
+        <% } %></p>
+        <button><%= typeof completedAt == 'undefined' ? 'Complete' : 'Incomplete' %></button>
       </div>
   </script>
 
