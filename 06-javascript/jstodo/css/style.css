@@ -1,0 +1,42 @@
+body {
+  background-color: #399;
+  color: white;
+}
+
+#container > h1 {
+  text-align: center;
+}
+
+#container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.task {
+  background-color: #4aa;
+  border: 1px solid white;
+  border-radius: 1em;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.task h2 {
+  margin-top: 0;
+}
+
+button {
+  color: black;
+}
+
+#completed {
+  margin-top: 2em;
+}
+
+#completed .task {
+  opacity: 0.5;
+  transition: 0.2s linear all;
+}
+
+#completed .task:hover {
+  opacity: 1;
+}
