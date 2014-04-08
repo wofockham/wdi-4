@@ -7,8 +7,6 @@ $(document).ready(function () {
     var task = jsTodoApp.tasks[taskID];
     task.completedAt = (new Date()).toString();
 
-    console.log('you completed this task', task);
-
     $task.fadeOut(function () {
       jsTodoApp.showTasks();
     });
@@ -19,9 +17,7 @@ $(document).ready(function () {
 
     var taskID = $task.attr('data-taskID');
     var task = jsTodoApp.tasks[taskID];
-    delete task.completedAt;
-
-    console.log('you uncompleted this task', task);
+    task.completedAt = null;
 
     $task.fadeOut(function () {
       jsTodoApp.showTasks();
@@ -35,7 +31,6 @@ $(document).ready(function () {
     $input.val('');
     jsTodoApp.createTask(description);
     jsTodoApp.showTasks();
-    console.log(jsTodoApp.tasks);
   });
 });
 
@@ -46,7 +41,8 @@ var jsTodoApp = {
     var task = {
       'description': description,
       createdAt: (new Date()).toString(),
-      id: this.nextID++
+      id: jsTodoApp.nextID++,
+      completedAt: null
     };
 
     this.tasks.push(task);
