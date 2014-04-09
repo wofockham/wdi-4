@@ -1,5 +1,5 @@
 class Allergies
-  attr_reader :bitfield
+  attr_reader :bitfield, :list
 
   ALLERGENS = {
     :eggs => (1),
@@ -14,17 +14,14 @@ class Allergies
 
   def initialize(bitfield)
     @bitfield = bitfield
+    @list = ALLERGENS.map do |allergen, code|
+      allergen if allergic_to?(allergen)
+    end.compact
   end
 
   def allergic_to?(allergen)
     code = ALLERGENS[allergen.to_sym]
     (@bitfield & code) > 0 ? true : false
-  end
-
-  def list
-    ALLERGENS.map do |allergen, code|
-      allergen if allergic_to?(allergen)
-    end.compact
   end
 end
 
