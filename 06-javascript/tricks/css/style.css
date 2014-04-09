@@ -1,0 +1,50 @@
+html, body {
+  background-image: url(http://2.bp.blogspot.com/-k0qnMZ28rPw/UieEt11MnaI/AAAAAAAACSM/8VB4t7k7t7k/s1600/bill-murray.jpg);
+  background-attachment: fixed;
+}
+
+body {
+  background-color: green;
+  color: white;
+  font-family: Arial;
+  min-height: 1000em;
+}
+
+nav {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: pink;
+  position: fixed;
+  left: 0;
+  top: 40%;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: grey;
+}
+
+#container {
+  background-color: rgba(68, 68, 68, 0.5);
+  max-width: 960px;
+  margin: auto;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.bubble {
+  border-radius: 100%;
+  border: 2px solid white;
+  position: fixed;
+  opacity: 0.8;
+}
