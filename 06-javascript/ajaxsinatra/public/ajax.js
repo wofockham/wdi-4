@@ -11,6 +11,8 @@ $(document).ready(function () {
         $('title').html(data.number);
     }).fail(function () {
       $('#number').html(23);
+    }).always(function () {
+      console.log('this always happens');
     });
   });
 
