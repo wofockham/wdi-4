@@ -1,0 +1,35 @@
+<p class="notification">
+  This is a notification
+</p>
+
+<p class="error">
+  This is an error
+</p>
+
+<p class="success">
+  This is a success
+</p>
+
+<article class="post">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p class="slug">
+    <strong>Slug:</strong>
+    <%= @post.slug %>
+  </p>
+
+  <section class="content">
+    <h1>Content</h1>
+    <%= @post.content %>
+  </section>
+
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+
+</article>
