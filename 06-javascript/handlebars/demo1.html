@@ -9,24 +9,36 @@
 <body>
 
   <script id="post-template" type="text/x-handlebars-temple">
-    <div>
-      <h1>{{ title }}</h1>
-      <h4>{{ date }}</h4>
-      <p>{{ body }}</p>
-    </div>
+    <h1>Recent Posts</h1>
+    {{#each posts}}
+      <div>
+        <h1>{{ this.title }}</h1>
+        <h4>{{ this.date }}</h4>
+        <p>{{ this.body }}</p>
+      </div>
+    {{/each}}
   </script>
 
   <script>
-    var post_data = {
-      title: "My First Handlebars Template",
-      date: "Yesterday",
-      body: "Lorem ipsum"
+    var data = {
+      posts: [{
+        title: "My First Handlebars Template",
+        date: "Yesterday",
+        body: "Lorem ipsum"
+      }, {
+        title: "My First Handlebars Template",
+        date: "Today",
+        body: "Updated ipsum"
+      }, {
+        title: "Same Template, Different Data",
+        date: "Tomorrow",
+        body: "Even Updated ipsum"
+      }]
     };
 
     var post = $('#post-template').html();
     var template = Handlebars.compile(post);
-
-    $('body').append( template(post_data) );
+    $('body').append( template(data));
   </script>
 
 </body>
