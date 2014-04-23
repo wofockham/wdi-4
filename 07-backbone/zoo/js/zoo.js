@@ -43,6 +43,18 @@ var ZooView = Backbone.View.extend({
   }
 });
 
+var AnimalView = Backbone.View.extend({
+  el: '#main',
+
+  initialize: function () {
+    this.template = _.template($('#animal-view-template').html());
+  },
+
+  render: function () {
+    this.$el.html( this.template(this.model.toJSON()) );
+  }
+});
+
 var AppRouter = Backbone.Router.extend({
   routes: {
     "": "index",
@@ -53,7 +65,8 @@ var AppRouter = Backbone.Router.extend({
     zooView.render();
   },
   viewAnimal: function (id) {
-    alert("viewing animal id:" + id);
+    var animalView = new AnimalView({model: myZoo.models[id]});
+    animalView.render();
   }
 });
 
