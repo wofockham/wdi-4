@@ -1,0 +1,25 @@
+  <div id="center-content">
+    <h1>Countries of the world</h1>
+
+    <button id="get-all">Get all</button>
+    <button id="get-one">Get one</button>
+    <button id="get-five">Get 5</button>
+    Get <input type="number" id="get-count">
+    <button id="get-n">Go!</button>
+    <button id="clear">Clear</button>
+
+    <div id="content" class="f32">
+
+      <%#= render partial: 'country', collection: @countries %>
+
+    </div>
+
+  </div>
+
+  <script id="countries-template" type="text/x-handlebars-template">
+    <div class="country" data-countryid="{{ id }}">
+      <p {{#if north_america}} class="na" {{/if}}>
+        <span class="flag {{ abbreviation }}"></span> {{ name }} {{ abbreviation }}
+      </p>
+    </div>
+  </script>
