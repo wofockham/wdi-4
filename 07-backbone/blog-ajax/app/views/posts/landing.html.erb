@@ -1,0 +1,27 @@
+<div id="main">
+</div>
+
+<script id="appView" type="text/x-underscore-template">
+  <h1>Recent Posts</h1>
+  <ul id="posts"></ul>
+</script>
+
+<script id="postListView" type="text/x-underscore-template">
+  <a href="#posts/{{ id }}">{{ title }}</a>
+</script>
+
+<script id="postView" type="text/x-underscore-template">
+  <div class="post">
+    <h1 class="title">{{ title }}</h1>
+    <div class="content">
+      {{ content }}
+    </div>
+    <form>
+      <textarea placeholder="Your insight goes here"></textarea>
+      <input placeholder="Your name">
+      <button>Submit comment</button>
+    </form>
+    <div class="comments">
+    </div>
+  </div>
+</script>
