@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Zoo</title>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/zoo.js"></script>
+</head>
+<body>
+
+<div id="main">
+</div>
+
+<script id="animal-template" type="text/x-underscore-template">
+  <li>
+    The <%= type %> lives in the <%= ecosystem %>
+    <a href="#animals/<%= animalID %>"><%= type %></a>
+  </li>
+</script>
+
+<script id="animal-view-template" type="text/x-underscore-template">
+  <h1><%= type %></h1>
+  <h2>The <%= type %> lives in the <%= ecosystem %>.</h2>
+  <p>It has <%= stripes %> stripes.</p>
+  <a href="#">Back home</a>
+</script>
+
+</body>
+</html>

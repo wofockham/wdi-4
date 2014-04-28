@@ -1,0 +1,20 @@
+[
+  {
+      "ecosystem": "pond",
+      "stripes": 15,
+      "type": "frog",
+      "id": 2
+  },
+  {
+      "ecosystem": "pond",
+      "stripes": 8000,
+      "type": "eel",
+      "id": 3
+  },
+  {
+      "ecosystem": "pond",
+      "stripes": 0,
+      "type": "snail",
+      "id": 4
+  }
+]
