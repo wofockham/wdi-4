@@ -23,6 +23,6 @@ $(document).ready(function () {
   BlogAjax.blogPosts = new BlogAjax.Collections.Posts();
   BlogAjax.blogPosts.fetch().done(function () {
     BlogAjax.router = new BlogAjax.Routers.appRouter();
-    Backbone.history.start({pushState: Modernizr.history});
+    Backbone.history.start({pushState: false}); // Modernizr.history});
   });
 });

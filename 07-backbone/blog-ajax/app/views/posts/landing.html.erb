@@ -16,12 +16,29 @@
     <div class="content">
       {{ content }}
     </div>
-    <form>
-      <textarea placeholder="Your insight goes here"></textarea>
-      <input placeholder="Your name">
-      <button>Submit comment</button>
+    <hr>
+    <form id="commentForm">
+      <p>
+        <textarea placeholder="Your insight goes here" id="comment"></textarea>
+      </p>
+      <p>
+        <input placeholder="Your name" id="author">
+      </p>
+      <p>
+        <button>Submit comment</button>
+      </p>
     </form>
     <div class="comments">
     </div>
   </div>
+</script>
+
+<script id="commentView" type="text/x-underscore-template">
+  <hr>
+  <blockquote>
+    <p>
+      {{ content }}
+    </p>
+    <cite>{{ author }}</cite>
+  </blockquote>
 </script>

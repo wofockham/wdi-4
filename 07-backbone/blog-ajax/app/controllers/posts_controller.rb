@@ -9,6 +9,15 @@ class PostsController < ApplicationController
     render :json => post.comments
   end
 
+  def add_comment
+    comment = Comment.new
+    comment.post_id = params[:post_id]
+    comment.author = params[:author]
+    comment.content = params[:content]
+    comment.save
+    render :json => comment
+  end
+
   # GET /posts
   # GET /posts.json
   def index

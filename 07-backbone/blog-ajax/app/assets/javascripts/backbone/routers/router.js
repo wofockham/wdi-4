@@ -10,8 +10,8 @@ BlogAjax.Routers.appRouter = Backbone.Router.extend({
     view.render();
   },
 
-  showPost: function (slug) {
-    var post = BlogAjax.blogPosts.get(slug);
+  showPost: function (id) {
+    var post = BlogAjax.blogPosts.get(id);
     new BlogAjax.Views.PostView({model: post});
   },
 
