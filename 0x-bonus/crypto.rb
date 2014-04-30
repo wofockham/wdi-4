@@ -26,14 +26,14 @@ class Crypto
   end
 
   def cipher(segments)
-    cipher_hash = []
+    cipher_bits = []
     segments.each do |segment|
       segment.each_with_index do |letter, index|
-        cipher_hash[index] ||= []
-        cipher_hash[index] << letter
+        cipher_bits[index] ||= []
+        cipher_bits[index] << letter
       end
     end
-    cipher_hash.join('')
+    cipher_bits.join('')
   end
 end
 
