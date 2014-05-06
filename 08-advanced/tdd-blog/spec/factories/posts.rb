@@ -11,12 +11,11 @@
 #  author     :string(255)
 #
 
-class Post < ActiveRecord::Base
-  validates :title, :presence => true
-  validates :author, :presence => true
-
-  scope :published, -> { where(:published => true) }
-  scope :drafts, -> { where(:published => false) }
-
-  has_many :comments
+FactoryGirl.define do
+  factory :post do |f|
+    f.sequence(:title) { |n| "TDD Post #{n}"}
+    author "Craigsy and Jonesy, their love was forbidden"
+    content { Faker::Lorem.sentence }
+    published false
+  end
 end
