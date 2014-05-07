@@ -5,8 +5,18 @@ $(document).ready(function () {
   }
 
   $(window).on('deviceorientation', function (event) {
-    $('body').css('letter-spacing', event.originalEvent.gamma);
-    $('body').css('line-spacing', event.originalEvent.beta);
+    console.log(event.originalEvent.gamma);
+    if (event.originalEvent.gamma > 1) {
+      $('body').addClass('flippedY');
+    } else {
+      $('body').removeClass('flippedY');
+    }
+
+    if (event.originalEvent.beta > 1) {
+      $('body').addClass('flippedX');
+    } else {
+      $('body').removeClass('flippedX');
+    }
   });
 
 });

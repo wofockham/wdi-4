@@ -1,0 +1,12 @@
+body {
+  transition: 1s linear all;
+  -webkit-transform: perspective(1200px);
+}
+
+body.flippedY {
+  -webkit-transform: rotateY(180deg);
+}
+
+body.flippedX {
+  -webkit-transform: rotateX(180deg);
+}
