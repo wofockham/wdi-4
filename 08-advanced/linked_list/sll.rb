@@ -12,10 +12,20 @@ class Node
 end
 
 class SinglyLinkedList
+  include Enumerable
   attr_accessor :head
 
   def initialize(first_value=nil)
     @head = Node.new(first_value) if first_value
+  end
+
+  def each(&block)
+    node = @head
+    while node
+      block.call(node.value)
+      node = node.next
+    end
+    self
   end
 
   def prepend(value)
